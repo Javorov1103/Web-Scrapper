@@ -9,14 +9,14 @@ import re
 import os
 
 
-async def save_product(product):
-    with open('man_shoes.csv','a',encoding='utf8') as csv_file:
-        write = csv.writer(csv_file)
-        write.writerow(product)
+# async def save_product(product):
+#     with open('man_shoes.csv','a',encoding='utf8') as csv_file:
+#         write = csv.writer(csv_file)
+#         write.writerow(product)
         
         
-async def add_product(product, counter):
-    create_gomba_xml(product, counter)
+# async def add_product(product, counter):
+#     create_gomba_xml(product, counter)
     
 async def scrape(url, parameter_counter_id,size_counter,categoryId,categoryName):
     async with aiohttp.ClientSession() as session:
@@ -102,7 +102,7 @@ async def main():
         # files = ['Мъжки мокасини.csv',]
         for file_name in files:  
             categoryId += 1 
-            file_path = f'D:\Projects\Python\WebScrapperForGomba\Product links csvs\{file_name}'        
+            file_path = f'./Product links csvs\{file_name}'        
             with open(file_path) as file:
                 categoryName = file_name.replace('.csv','')
                 csv_reader = csv.DictReader(file)
